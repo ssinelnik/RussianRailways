@@ -5,7 +5,7 @@ require './modules/instance_counter'
 require './modules/accessors'
 
 class Route
-  include Validate
+  include Validation
   include InstanceCounter
   include Acсessors
 
@@ -33,7 +33,7 @@ class Route
   def view_route
     stations.each { |station| puts station.name }
   end
-
+  
   private
 
   attr_writer :stations

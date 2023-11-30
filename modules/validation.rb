@@ -3,7 +3,7 @@
 module Validation
   def self.included(base)
     base.extend ClassMethods
-    base.included InstanceMethods
+    base.include InstanceMethods
   end
 
   module ClassMethods

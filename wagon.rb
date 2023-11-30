@@ -4,7 +4,7 @@ require './modules/instance_counter'
 require './modules/manufacturer'
 require './modules/validation'
 require './modules/constants'
-require './require/accessors'
+require './modules/accessors'
 
 class Wagon
   include InstanceCounter

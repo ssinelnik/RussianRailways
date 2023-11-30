@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require './modules/instance_counter'
-require './modules/validate'
+require './modules/validation'
 require './modules/manufacturer'
 require './modules/constants'
 require './modules/accessors'

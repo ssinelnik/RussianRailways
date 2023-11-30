@@ -13,19 +13,19 @@ class Station
 
   validate :name, :presence
   validate :name, :length, 3
-  validate :name, type, Symbol
+  validate :name, :type, Symbol
 
-  @stations = []
+  @@stations = []
 
   def self.all
-    @stations
+    @@stations
   end
 
   def initialize(name, options = {})
     @name = name
     @trains_on_station = options[:trains_on_station] || 0
     validate!
-    @stations << self
+    @@stations << self
     register_instance
   end
 
