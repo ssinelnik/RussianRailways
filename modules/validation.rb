@@ -20,7 +20,7 @@ module Validation
     rescue RuntimeError
       false
     end
-    
+
     private
 
     def validate!
@@ -41,7 +41,7 @@ module Validation
       raise "#{name} must be #{regular_expression}!" if value !~ regular_expression
     end
 
-    def validate_type(name, value, type) # validate_type - требует соответствия значения атрибута заданному классу.
+    def validate_type(name, value, type) # validate_type - требует соответствия значения атрибута заданному классу
       raise "Type #{name} must be #{type}" unless value.is_a?(type)
     end
 

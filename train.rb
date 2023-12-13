@@ -17,21 +17,21 @@ class Train
   attr_reader :number, :wagons, :route, :wagon_number
   attr_accessor :speed
 
-  @trains = []
+  @@trains = []
 
   validate :number, :presence
   validate :number, :type, String
   validate :number, :format, NUMBER_TRAIN_FORMAT
 
   def self.find(number)
-    @trains.each { |train| train.number == number } 
+    @@trains.each { |train| train.number == number } 
   end
 
-  def initialize(number, options = {})
+  def initialize(number)
     @number = number
-    @wagons = options[:wagons] || []
-    @speed = options[:speed] || 0
-    validate!
+    @wagons = []
+    @speed = 0
+    @validate
     @@trains << self
     register_instance
   end

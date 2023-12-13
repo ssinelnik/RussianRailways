@@ -21,11 +21,19 @@ class Wagon
   validate :volume, :positive
   validate :volume, :type, Integer
 
-  def initialize(wagon_number, options = {})
+  # def initialize(wagon_number, options = {})
+  #   @wagon_number = wagon_number
+  #   @volume = options[:volume] || 0
+  #   @occupied_volume = options[:occupied_volume] || 0
+  #   validate!
+  #   register_instance
+  # end
+
+  def initialize(wagon_number, volume)
     @wagon_number = wagon_number
-    @volume = options[:volume] || 0
-    @occupied_volume = options[:occupied_volume] || 0
-    validate!
+    @volume = volume
+    @occupied_volume = 0
+    @validate
     register_instance
   end
 

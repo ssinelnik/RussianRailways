@@ -1,0 +1,14 @@
+    Traceback (most recent call last):
+    12: from main_menu.rb:18:in `<main>'
+    11: from main_menu.rb:296:in `<class:MainMenu>'
+    10: from main_menu.rb:296:in `new'
+    9: from main_menu.rb:53:in `initialize'
+    8: from main_menu.rb:57:in `main_menu'
+    7: from main_menu.rb:57:in `loop'
+    6: from main_menu.rb:62:in `block in main_menu'
+    5: from main_menu.rb:80:in `create_new_train'
+    4: from main_menu.rb:109:in `create_train'
+    3: from main_menu.rb:109:in `new'
+    2: from /Users/alexandersinelnik/Documents/Ruby/RussianRailways/passenger_train.rb:7:in `initialize'
+    1: from /Users/alexandersinelnik/Documents/Ruby/RussianRailways/train.rb:34:in `initialize'
+/Users/alexandersinelnik/Documents/Ruby/RussianRailways/modules/validation.rb:27:in `validate!': undefined method `each' for nil:NilClass (NoMethodError)

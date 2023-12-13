@@ -96,7 +96,7 @@ class MainMenu
     puts 'Enter new train number'
     number = gets.chomp.to_s
     raise 'Invalid number! Please, repeat!' if number !~ NUMBER_TRAIN_FORMAT
-
+    
     number
   rescue RuntimeError => e
     puts e
@@ -196,15 +196,15 @@ class MainMenu
 
   def create_new_route
     puts 'Enter first station on route'
-    first_station = gets.chomp.to_sym
+    first_station = select_from_collection(@stations)
     puts 'Enter last station on route'
-    last_station = gets.chomp.to_sym
-    @routes << Route.new(first_station, last_station)
+    last_station = select_from_collection(@stations)
+    @routes << Route.new(first_station, last_station) if first_station != last_station
   end
 
   def add_station
     puts 'Enter station name on route'
-    station = gets.chomp.to_sym
+    station = select_from_collection(@stations)
     route = select_from_collection(@routes)
     route.add_station(station)
   end

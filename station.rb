@@ -9,7 +9,7 @@ class Station
   include InstanceCounter
   include Acсessors
 
-  attr_reader :name, :trains_on_station
+  attr_reader :trains_on_station, :name 
 
   validate :name, :presence
   validate :name, :length, 3
@@ -21,10 +21,10 @@ class Station
     @@stations
   end
 
-  def initialize(name, options = {})
+  def initialize(name)
     @name = name
-    @trains_on_station = options[:trains_on_station] || 0
-    validate!
+    @trains_on_station = []
+    @validate
     @@stations << self
     register_instance
   end
